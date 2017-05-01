@@ -1,0 +1,366 @@
+*{
+  /*outline: 1px solid green;*/
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+button{
+  cursor: pointer;
+}
+
+.default-flat-button{
+  min-width: 80px;
+  height: 36px;
+  margin: 0px 8px;
+  padding: 0 8px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+.default-flat-button:focus{
+  outline: none;
+}
+
+.default-raised-button{
+  min-width: 80px;
+  height: 36px;
+  margin: 0px 8px;
+  padding: 0 8px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+.default-raised-button:focus{
+  outline: none;
+}
+
+.default-raised-button:hover{
+  box-shadow: 1px 1px 2px lightgray;
+}
+
+.default-fba{
+  min-width: 56px;
+  min-height: 56px;
+  height: 48px;
+  margin: 0px 8px;
+  padding: 6px 8px;
+  border: none;
+  border-radius: 56px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 1px 1px 6px 1px gray;
+}
+
+.default-fba:hover{
+  box-shadow: 1px 1px 12px 1px gray;
+}
+.default-fba:focus{
+  outline: none;
+}
+
+.default-fba:visited{
+  outline: none;
+}
+
+body{
+  min-height: 100px;
+  /*background-color: #f4f4f4;*/
+  background-color: #ffffff;
+}
+
+/******************************************************************************/
+/*Heder*/
+/******************************************************************************/
+
+/******************************************************************************/
+/*Article*/
+/******************************************************************************/
+article{
+  padding: 100px 420px;
+}
+
+.center-image-section{
+  width: 500px;
+  height: 400px;
+  box-shadow: 1px 1px 6px 1px lightgray;
+  cursor: pointer;
+}
+
+.center-image-section img{
+  width: 100%;
+  height: 100%;
+}
+
+.fba-section button{
+  /*min-width: 56px;
+  min-height: 56px;*/
+  width: 56px;
+  height: 56px;
+  /*height: 48px;*/
+  margin: 0px 8px;
+  padding: 6px 8px;
+  border: none;
+  border-radius: 56px;
+  cursor: pointer;
+  /*font-size: 14px;
+  font-weight: 500;*/
+  box-shadow: 1px 1px 6px 1px gray;
+}
+
+.fba-section button:hover{
+  box-shadow: 1px 1px 12px 1px gray;
+}
+.fba-section button:focus{
+  outline: none;
+}
+
+.fba-section button:visited{
+  outline: none;
+}
+
+.email-button{
+  position: fixed;
+  bottom: 100px;
+  right: 24px;
+  background-color: #00bcd4;
+  color: white;
+}
+.resume-download-button{
+  position: fixed;
+  background-color: #00bcd4;
+  bottom: 24px;
+  right: 24px;
+  /*color: black;
+  float: right;*/
+}
+
+/******************************************************************************/
+/******************************************************************************/
+/*MEDIUM DISPLAY*/
+/******************************************************************************/
+/******************************************************************************/
+@media (min-width:768px) and (max-width:991px){
+  /******************************************************************************/
+  /*Article*/
+  /******************************************************************************/
+
+  /*.fba-section button{
+    width: 40px;
+    height: 40px;
+    border-radius:  40px;
+  }*/
+
+}
+
+/******************************************************************************/
+/******************************************************************************/
+/*SMALL DISPLAY*/
+/******************************************************************************/
+/******************************************************************************/
+@media (min-width:425px) and (max-width:767px){
+  /******************************************************************************/
+  /*Heder*/
+  /******************************************************************************/
+  .home-link-section{
+    padding: 14px 56px;
+  }
+  .nav-bar{
+    display: none;
+  }
+
+  /******************************************************************************/
+  /*Article*/
+  /******************************************************************************/
+  button{
+    font-size: 13px;
+  }
+
+  .about-section{
+    padding: 16px;
+  }
+  .self-description{
+    font-size: 14px;
+  }
+  .single-project{
+    /*display: block;*/
+    width: 98%;
+    margin: 8% 1%;
+    min-height: 100px;
+    display: inline-block;
+    padding-bottom: 8px;
+  }
+
+  .project-img{
+    margin-bottom: 8px;
+  }
+  /*.fba-section button{
+    width: 40px;
+    height: 40px;
+    border-radius:  40px;
+    right: 8px;
+  }
+  .email-button{
+    bottom: 16px;
+  }
+  .resume-download-button{
+    bottom: 84px;
+  }*/
+}
+
+@media (min-width:375px) and (max-width:424px){
+  /******************************************************************************/
+  /*Heder*/
+  /******************************************************************************/
+  .home-link-section{
+    padding: 14px 56px;
+  }
+  .nav-bar{
+    display: none;
+  }
+
+  /******************************************************************************/
+  /*Article*/
+  /******************************************************************************/
+  button{
+    font-size: 13px;
+  }
+
+  .about-section{
+    padding: 16px;
+  }
+  .self-description{
+    font-size: 14px;
+  }
+  .single-project{
+    width: 98%;
+    margin: 8% 1%;
+    min-height: 100px;
+    display: inline-block;
+    padding-bottom: 8px;
+  }
+
+  .project-img{
+    margin-bottom: 8px;
+  }
+  /*.fba-section button{
+    width: 40px;
+    height: 40px;
+    border-radius:  40px;
+    right: 8px;
+  }
+  .email-button{
+    bottom: 16px;
+  }
+  .resume-download-button{
+    bottom: 84px;
+  }*/
+}
+@media (min-width:320px) and (max-width:374px){
+  /******************************************************************************/
+  /*Heder*/
+  /******************************************************************************/
+  .home-link-section{
+    padding: 14px 56px;
+  }
+  .nav-bar{
+    display: none;
+  }
+
+  /******************************************************************************/
+  /*Article*/
+  /******************************************************************************/
+  button{
+    font-size: 13px;
+  }
+
+  .about-section{
+    padding: 16px;
+  }
+  .self-description{
+    font-size: 14px;
+  }
+  .single-project{
+    width: 98%;
+    margin: 8% 1%;
+    min-height: 100px;
+    display: inline-block;
+    padding-bottom: 8px;
+  }
+
+  .project-img{
+    margin-bottom: 8px;
+  }
+  .fba-section button{
+    width: 40px;
+    height: 40px;
+    border-radius:  40px;
+    right: 8px;
+  }
+  .email-button{
+    bottom: 84px;
+  }
+  .resume-download-button{
+    bottom: 16px;
+  }
+}
+
+@media (max-width:319px){
+  /******************************************************************************/
+  /*Heder*/
+  /******************************************************************************/
+  .home-link-section{
+    padding: 14px 40px;
+  }
+  .nav-bar{
+    display: none;
+  }
+
+  /******************************************************************************/
+  /*Article*/
+  /******************************************************************************/
+  button{
+    font-size: 13px;
+  }
+
+  .about-section{
+    padding: 16px;
+  }
+  .self-description{
+    font-size: 14px;
+  }
+  .single-project{
+    width: 98%;
+    margin: 8% 1%;
+    min-height: 100px;
+    display: inline-block;
+    padding-bottom: 8px;
+  }
+
+  .project-img{
+    margin-bottom: 8px;
+  }
+  .fba-section button{
+    width: 40px;
+    height: 40px;
+    border-radius:  40px;
+    right: 8px;
+  }
+  .email-button{
+    bottom: 84px;
+  }
+  .resume-download-button{
+    bottom: 16px;
+  }
+}
