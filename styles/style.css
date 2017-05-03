@@ -80,81 +80,52 @@ body{
   background-color: #ffffff;
 }
 
-/******************************************************************************/
-/*Heder*/
-/******************************************************************************/
-
-/******************************************************************************/
-/*Article*/
-/******************************************************************************/
-article{
-  padding: 100px 420px;
-}
-
-.center-image-section{
-  width: 500px;
-  height: 400px;
-  box-shadow: 1px 1px 6px 1px lightgray;
-  cursor: pointer;
-}
-
-.center-image-section img{
-  width: 100%;
-  height: 100%;
-}
-
-.fba-section button{
-  /*min-width: 56px;
-  min-height: 56px;*/
-  width: 56px;
+/*****************************************************************************/
+/*header*/
+/*****************************************************************************/
+header{
+  padding: 10px 16px;
   height: 56px;
-  /*height: 48px;*/
-  margin: 0px 8px;
-  padding: 6px 8px;
-  border: none;
-  border-radius: 56px;
-  cursor: pointer;
-  /*font-size: 14px;
-  font-weight: 500;*/
-  box-shadow: 1px 1px 6px 1px gray;
+}
+.right-nav-section{
+  float: right;
+}
+.default-flat-button{
+  background-color: white;
 }
 
-.fba-section button:hover{
-  box-shadow: 1px 1px 12px 1px gray;
+/*****************************************************************************/
+/*article*/
+/*****************************************************************************/
+article{
+  padding: 16px;
+  min-height: 200px;
 }
-.fba-section button:focus{
-  outline: none;
+.search-input{
+  width: 500px;
+  height: 36px;
 }
-
-.fba-section button:visited{
-  outline: none;
-}
-
-.email-button{
-  position: fixed;
-  bottom: 100px;
-  right: 24px;
-  background-color: #00bcd4;
-  color: white;
-}
-.resume-download-button{
-  position: fixed;
-  background-color: #00bcd4;
-  bottom: 24px;
-  right: 24px;
-  /*color: black;
-  float: right;*/
+.search-section{
+  margin: 16px 0px;
 }
 
+.recipe-item-section{
+  /*margin: 8px 0px;*/
+  min-height: 10px;
+  padding: 24px 0px;
+}
+.fav-recipe-item{
+  padding: 24px 0px;
+}
 /******************************************************************************/
 /******************************************************************************/
 /*MEDIUM DISPLAY*/
 /******************************************************************************/
 /******************************************************************************/
 @media (min-width:768px) and (max-width:991px){
-  /******************************************************************************/
+  /*****************************************************************************/
   /*Article*/
-  /******************************************************************************/
+  /*****************************************************************************/
 
   /*.fba-section button{
     width: 40px;

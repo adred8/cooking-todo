@@ -1,0 +1,23 @@
+<section class="search-section">
+  <input ng-model = "Nid.searchTerm" class="search-input" type="text" name="" value="" placeholder="Search recipes">
+  <button ng-click = "Nid.searchRecipes()" class="default-flat-button" type="button" name="button">SEARCH</button>
+  <!-- <button class = "filters-button default-flat-button" type="button" name="button">FILTERS</button> -->
+  {{Nid.message}}
+</section>
+
+<section class = "filters-section">
+
+</section>
+
+<section class="search-results-section" ng-repeat = "recipeItem in Nid.found">
+  <section class="recipe-item-section">
+    <section class="recipe-description-section col-lg-7" >
+      {{recipeItem.recipe.label}}
+    </section>
+
+    <section class="action-buttons-section col-lg-5">
+      <button ng-click = "Nid.addingItem($index)" class="default-raised-button" title = "Add to favorites" type="button" name="button">ADD</button>
+      <!-- <button class="default-raised-button" title = "Remove from search list" type="button" name="button">REMOVE</button> -->
+    </section>
+  </section>
+</section>

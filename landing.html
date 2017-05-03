@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app = "NarrowItDownApp">
+
+  <head>
+    <title>Recipe picker</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/col.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+    <header>
+      <a href="#!/recipe">
+        <button class = "recipes-button default-flat-button" type="button" name="button">Browse recipes</button>
+      </a>
+      <section class = "right-nav-section">
+        <a href="#!/user"><button class = "user-button default-flat-button" type="button" name="button">user</button></a>
+        <button class = "logout-button default-raised-button" type="button" name="button">Logout</button>
+      </section>
+    </header>
+
+    <article>
+
+      <ng-view></ng-view>
+
+
+    </article>
+
+    <script type="text/javascript" src = "scripts/jquery-3.1.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js"></script>
+    <script type="text/javascript" src = "scripts/main.js"></script>
+  </body>
+
+</html>

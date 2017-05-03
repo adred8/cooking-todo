@@ -1,0 +1,35 @@
+<section class = "fav-recipe-section">
+
+  <h1>Favourite recipes</h1>
+
+  <section class="fav-recipe-item" ng-repeat = "recipeItem in userCtrl.favRecipeList track by $index">
+
+    <section class="fav-recipe-description-section col-lg-7" >
+      {{recipeItem.recipe.label}}
+    </section>
+
+    <section class="action-buttons-section col-lg-5">
+      <button ng-click = "userCtrl.removeFavItem($index)" class="default-raised-button" title = "Remove from favorites" type="button" name="button">REMOVE</button>
+    </section>
+
+  </section>
+
+</section>
+
+<!-- <section class = "shop-list-section">
+
+  <h1>Shopping list</h1>
+
+  <section class="fav-recipe-item" ng-repeat = "recipeItem in Nid.favRecipeList">
+
+    <section class="recipe-description-section col-lg-7" >
+      {{recipeItem.recipe.label}}
+    </section>
+
+    <section class="action-buttons-section col-lg-5">
+      <button ng-click = "Nid.addingItem($index)" class="default-raised-button" title = "Remove from favorites" type="button" name="button">REMOVE</button>
+    </section>
+
+  </section>
+
+</section> -->
