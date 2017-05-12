@@ -111,11 +111,42 @@ article{
 
 .recipe-item-section{
   /*margin: 8px 0px;*/
-  min-height: 10px;
+  min-height: 150px;
   padding: 24px 0px;
 }
 .fav-recipe-item{
+  min-height: 150px;
   padding: 24px 0px;
+}
+
+.app-description{
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0px 100px;
+}
+
+.recipe-details-section{
+  width: 700px;
+  height: 500px;
+  background-color: white;
+  overflow: auto;
+
+  /*margin: 50px 370px;*/
+  box-shadow: 1px 1px 24px 600px rgba(0, 0, 0, .2);
+  padding: 32px;
+  position: fixed;
+  top: 60px;
+  left: 370px;
+}
+.recipe-image{
+  height: 100px;
+  width: 100px;
+}
+.close-recipe-button{
+  float: right;
+}
+.stop-scroll{
+  overflow: hidden;
 }
 /******************************************************************************/
 /******************************************************************************/

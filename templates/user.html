@@ -1,14 +1,20 @@
 <section class = "fav-recipe-section">
 
-  <h1>Favourite recipes</h1>
+  <header>
+    <button ng-click = "userCtrl.favListDisplay()" class = "default-raised-button favourites-button" type="button" name="button">Favourites List</button>
+    <button ng-click = "userCtrl.shopListDisplay()" class = "default-raised-button shopping-button" type="button" name="button">Shopping List</button>
+  </header>
 
-  <section class="fav-recipe-item" ng-repeat = "recipeItem in userCtrl.favRecipeList track by $index">
+  <section ng-show = "userCtrl.displayList" ng-if = "userCtrl.favRecipeList.length > 0" class="fav-recipe-item" ng-repeat = "recipeItem in userCtrl.favRecipeList track by $index">
 
-    <section class="fav-recipe-description-section col-lg-7" >
+    <section class="fav-recipe-description-section col-lg-4" >
       {{recipeItem.recipe.label}}
     </section>
-
+    <section class = "fav-recipe-image-section col-lg-3">
+      <img class = "recipe-image" ng-src="{{recipeItem.recipe.image}}" alt="">
+    </section>
     <section class="action-buttons-section col-lg-5">
+      <button ng-click = "userCtrl.showRecipe($index)" title = "View recipe" class = "view-recipe-button default-raised-button" type="button" name="button">VIEW RECIPE</button>
       <button ng-click = "userCtrl.removeFavItem($index)" class="default-raised-button" title = "Remove from favorites" type="button" name="button">REMOVE</button>
     </section>
 
@@ -16,20 +22,76 @@
 
 </section>
 
-<!-- <section class = "shop-list-section">
+<section ng-show  = "userCtrl.recipeValue" class = "recipe-details-section">
+  <header>
+    <h1 class="col-lg-10">{{userCtrl.recipeDisplay.recipe.label}}</h1>
+    <section col-lg-2>
+      <button class = "close-recipe-button " ng-click = "userCtrl.hideRecipe()" type="button" name="button">CLOSE</button>
+    </section>
+  </header>
+  <br><br>
 
-  <h1>Shopping list</h1>
+  <section class="recipe-minor-details">
 
-  <section class="fav-recipe-item" ng-repeat = "recipeItem in Nid.favRecipeList">
+  </section>
 
-    <section class="recipe-description-section col-lg-7" >
-      {{recipeItem.recipe.label}}
+  <section class = "col-lg-6 recipe-main-details" >
+    <section class="recipe-ingredients">
+      <h1>Ingredients</h1>
+      <ul>
+        <li ng-repeat = "ingredient in userCtrl.recipeDisplay.recipe.ingredients">{{ingredient.text}}</li>
+      </ul>
     </section>
 
-    <section class="action-buttons-section col-lg-5">
-      <button ng-click = "Nid.addingItem($index)" class="default-raised-button" title = "Remove from favorites" type="button" name="button">REMOVE</button>
+    <section class="recipe-steps">
+      <h1>Steps for making : </h1>
+      <ol>
+        <li ng-repeat = "step in userCtrl.recipeDisplay.recipe.ingredientLines">{{step}}</li>
+      </ol>
     </section>
+  </section>
 
+  <section class="recipe-main-image col-lg-6">
+    <img ng-src="{{userCtrl.recipeDisplay.recipe.image}}" alt="">
+  </section>
+
+</section>
+
+<section ng-if = "userCtrl.displayList === 0" class = "shop-list-section">
+
+  <br><br>
+  <section class = "addding-shop-item">
+    <input ng-model = "userCtrl.itemName" type="text" name="" value="" placeholder = "add item name">
+    <input ng-model = "userCtrl.itemQuantity" type="text" name="" value="" placeholder = "add item quantity">
+    <input ng-model = "userCtrl.itemUnits" type="text" name="" value="" placeholder = "add item units">
+    <button ng-click = "userCtrl.addShopItem()" type="button" name="button">ADD</button>
+  </section>
+  <br><br>
+  <section class= "display-shop-item">
+    <ul>
+      <li ng-repeat = "item in userCtrl.shopList" class="col-lg-12">
+        <section ng-show = "userCtrl.showShopItem" class="col-lg-12">
+          <section class="shop-item-details col-lg-2">
+            {{item.quantity}} {{item.units}} of {{item.name}}
+          </section>
+          <section class="shop-item-action col-lg-3">
+            <!-- <button ng-click = "userCtrl.editShopItem($index)" class = "edit-shop-item" type="button" name="button">EDIT</button> -->
+            <button ng-click = "userCtrl.removeShopItem($index)" type="button" name="button">REMOVE</button>
+          </section>
+        </section>
+      </li>
+    </ul>
+  </section>
+
+  <!-- <section ng-if = "userCtrl.showShopItem === 2" class="col-lg-12">
+    <section class="shop-editing-section col-lg-5">
+      <input ng-model = "userCtrl.editName" type="text" name="" value="">
+      <input ng-model = "userCtrl.editQuantity" type="text" name="" value="">
+      <input ng-model = "userCtrl.editUnits" type="text" name="" value="">
+    </section>
+    <section class="shop-editing-action col-lg-3">
+      <button ng-click = "userCtrl.edited()" type="button" name="button">DONE</button>
+    </section>
   </section>
 
 </section> -->
