@@ -105,6 +105,7 @@ $(document).ready(function(){
     Nid.message = "";
     Nid.successMessage = "";
     Nid.displaySuccessMessage = 0;
+    Nid.displayErrorMessage = 0;
     Nid.recipeValue = 0;
     Nid.showRecipe = function(index){
       Nid.recipeValue = 1;
@@ -115,24 +116,35 @@ $(document).ready(function(){
     }
     Nid.searchRecipes = function(){
       Nid.message = "searching..."
-      var getMyMenuItems = MenuSearchService.getMatchedMenuItems(Nid.searchTerm);
-      getMyMenuItems.then(function(response){
-        Nid.response = response;
-        Nid.found = Nid.response.hits;
-        console.log("Nid.found = ",  Nid.found);
-        console.log("Nid.response = ", Nid.response);
-        Nid.message = "Done !";
+      if (Nid.searchTerm === ""){
         Nid.displaySuccessMessage = 1;
-        Nid.successMessage = Nid.searchTerm;
+        Nid.displayErrorMessage = 1;
+        Nid.message = "";
+        Nid.errorMessage = "Please type something in search box...";
         Nid.searchTerm = "";
-        // Nid.message = Nid.searchTerm;
-      });
-      getMyMenuItems.catch(function(error){
-        Nid.response = error;
-        console.log("Nid.response = ", Nid.response);
-        Nid.message = "Error found";
-        Nid.searchTerm = "";
-      });
+        Nid.found = [];
+      }
+      else{
+        var getMyMenuItems = MenuSearchService.getMatchedMenuItems(Nid.searchTerm);
+        getMyMenuItems.then(function(response){
+          Nid.response = response;
+          Nid.found = Nid.response.hits;
+          console.log("Nid.found = ",  Nid.found);
+          console.log("Nid.response = ", Nid.response);
+          Nid.message = "Done !";
+          Nid.displayErrorMessage = 0;
+          Nid.displaySuccessMessage = 1;
+          Nid.successMessage = Nid.searchTerm;
+          Nid.searchTerm = "";
+          // Nid.message = Nid.searchTerm;
+        });
+        getMyMenuItems.catch(function(error){
+          Nid.response = error;
+          console.log("Nid.response = ", Nid.response);
+          Nid.message = "Error found";
+          Nid.searchTerm = "";
+        });
+      }
     };
     // Nid.favRecipeList = MenuSearchService.favRecipeList;
 

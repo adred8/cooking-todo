@@ -17,7 +17,9 @@
   <section ng-if = "Nid.found.length === 0">
     No results found
   </section>
-
+  <section ng-show = "Nid.displayErrorMessage">
+    {{Nid.errorMessage}}
+  </section>
 </header>
 
 <section class="search-results-section" ng-repeat = "recipeItem in Nid.found">
