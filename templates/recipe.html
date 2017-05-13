@@ -40,19 +40,34 @@
     <section class="search-results-section" ng-repeat = "recipeItem in Nid.found">
       <section class="recipe-item-section">
 
-        <section class="recipe-description-section col-lg-4" >
-          {{recipeItem.recipe.label}}
+        <section class = "col-lg-8">
+          <section class="recipe-description-section col-lg-12" >
+            <section class = "recipe-title">
+              {{recipeItem.recipe.label}}
+            </section>
+            <section class="recipe-details">
+              <!-- healthlabels, calories -->
+              <!-- <section class="health-labels-section">
+                <section ng-repeat = "label in recipeItem.recipe.healthLabels">
+                  {{label}}
+                </section>
+              </section> -->
+            </section>
+
+          </section>
+
+          <section class="action-buttons-section col-lg-12">
+            <button ng-click = "Nid.showRecipe($index)" title = "View recipe" class = "view-recipe-button default-raised-button" type="button" name="button">VIEW RECIPE</button>
+            <button ng-click = "Nid.addingItem($index)" class="default-raised-button add-recipe-button" title = "Add to favorites" type="button" name="button">ADD TO FAVOURITES</button>
+            <!-- <button class="default-raised-button" title = "Remove from search list" type="button" name="button">REMOVE</button> -->
+          </section>
         </section>
 
-        <section class = "recipe-image-section col-lg-3">
+        <section class = "recipe-image-section col-lg-4">
           <img class = "recipe-image" ng-src="{{recipeItem.recipe.image}}" alt="">
         </section>
 
-        <section class="action-buttons-section col-lg-5">
-          <button ng-click = "Nid.showRecipe($index)" title = "View recipe" class = "view-recipe-button default-raised-button" type="button" name="button">VIEW RECIPE</button>
-          <button ng-click = "Nid.addingItem($index)" class="default-raised-button add-recipe-button" title = "Add to favorites" type="button" name="button">ADD TO FAVOURITES</button>
-          <!-- <button class="default-raised-button" title = "Remove from search list" type="button" name="button">REMOVE</button> -->
-        </section>
+
 
       </section>
     </section>

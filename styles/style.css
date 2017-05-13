@@ -157,7 +157,8 @@ article{
   position: relative;
   height: 48px;
   top: 13px;
-  padding-top: 4px;
+  padding-top: 5px;
+  padding-left: 10px;
   width: 80px;
   background-color: #00bbd3;
   box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.35);
@@ -187,15 +188,26 @@ article{
 .search-results-box-section{
   box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.25);
 }
+.recipe-description-section{
+  height: 100px;
+}
+.recipe-title{
+  padding: 20px 8px;
+  font-size: 16px;
+  font-weight: 500;
+}
 .search-results-section{
   padding: 0px 16px;
   font-size: 16px;
   border-bottom: 2px solid lightgray;
   border-radius: 2px;
 }
+.action-buttons-section button{
+  background-color: #62eeff;
+}
 .recipe-item-section{
   /*margin: 8px 0px;*/
-  min-height: 150px;
+  min-height: 200px;
   padding: 24px 0px;
 }
 .fav-recipe-item{
@@ -223,8 +235,10 @@ article{
   left: 370px;
 }
 .recipe-image{
-  height: 100px;
-  width: 100px;
+  /*height: 100px;
+  width: 100px;*/
+  height: 150px;
+  width: 150px;
 }
 .close-recipe-button{
   float: right;
