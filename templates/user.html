@@ -20,6 +20,10 @@
 
   </section>
 
+  <section ng-if = "userCtrl.shopList.length === 0" ng-show = "userCtrl.displayList">
+    <br><br>No favorites added to this list. Browse for recipes to add...
+  </section>
+
 </section>
 
 <section ng-show  = "userCtrl.recipeValue" class = "recipe-details-section">

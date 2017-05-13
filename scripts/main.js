@@ -102,11 +102,12 @@ $(document).ready(function(){
   function NarrowItDownController (MenuSearchService, $q){
     var Nid = this;
     Nid.searchTerm = "";
-    Nid.message = "";
+    Nid.searchMessage = "";
     Nid.successMessage = "";
     Nid.displaySuccessMessage = 0;
     Nid.displayErrorMessage = 0;
     Nid.recipeValue = 0;
+    Nid.emptyBox = 0;
     Nid.showRecipe = function(index){
       Nid.recipeValue = 1;
       Nid.recipeDisplay = Nid.found[index];
@@ -115,24 +116,28 @@ $(document).ready(function(){
       Nid.recipeValue = 0;
     }
     Nid.searchRecipes = function(){
-      Nid.message = "searching..."
       if (Nid.searchTerm === ""){
+        Nid.emptyBox = 1;
         Nid.displaySuccessMessage = 1;
         Nid.displayErrorMessage = 1;
-        Nid.message = "";
+        Nid.searchMessage = "";
         Nid.errorMessage = "Please type something in search box...";
-        Nid.searchTerm = "";
         Nid.found = [];
       }
       else{
+        Nid.displayErrorMessage = 0;
+        Nid.emptyBox = 0;
+        Nid.searchMessage = "Searching..."
         var getMyMenuItems = MenuSearchService.getMatchedMenuItems(Nid.searchTerm);
         getMyMenuItems.then(function(response){
           Nid.response = response;
           Nid.found = Nid.response.hits;
           console.log("Nid.found = ",  Nid.found);
           console.log("Nid.response = ", Nid.response);
-          Nid.message = "Done !";
+          // Nid.message = "Done !";
+          Nid.searchMessage = "";
           Nid.displayErrorMessage = 0;
+          Nid.emptyBox = 1;
           Nid.displaySuccessMessage = 1;
           Nid.successMessage = Nid.searchTerm;
           Nid.searchTerm = "";
@@ -141,7 +146,7 @@ $(document).ready(function(){
         getMyMenuItems.catch(function(error){
           Nid.response = error;
           console.log("Nid.response = ", Nid.response);
-          Nid.message = "Error found";
+          Nid.searchMessage = "Error found";
           Nid.searchTerm = "";
         });
       }

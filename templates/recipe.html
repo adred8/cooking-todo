@@ -1,78 +1,97 @@
 
 <section class="search-section">
-  <input ng-model = "Nid.searchTerm" class="search-input" type="text" name="" value="" placeholder="Search recipes">
-  <button ng-click = "Nid.searchRecipes()" class="default-flat-button" type="button" name="button">SEARCH</button>
+
+  <input ng-model = "Nid.searchTerm" class="search-input" type="text" name="" value="" placeholder="Search for recipes of egg, chicken, pasta etc...">
+  <!-- <button ng-click = "Nid.searchRecipes()" class="default-raised-button search-button" type="button" name="button">SEARCH</button> -->
+  <button ng-click = "Nid.searchRecipes()" class="default-raised-button search-button" type="button" name="button">
+    <img src="images/search-36.png" alt="">
+  </button>
   <!-- <button class = "filters-button default-flat-button" type="button" name="button">FILTERS</button> -->
-  {{Nid.message}}
+  <section class = "search-status-section">
+    {{Nid.searchMessage}}
+  </section>
+
+  <section class="search-result-status" ng-if = "Nid.found.length === 0">
+
+
+    <section ng-show = "Nid.displayErrorMessage" ng-if = "Nid.emptyBox">
+      {{Nid.errorMessage}}
+    </section>
+    <section ng-show = "!Nid.displayErrorMessage" ng-if = "Nid.emptyBox">
+      No results found
+    </section>
+  </section>
+
 </section>
 
 <section class = "filters-section">
 
 </section>
 
-<header ng-show = "Nid.displaySuccessMessage">
-  <section ng-if = "Nid.found.length > 0">
-    Showing recipes for "{{Nid.successMessage}}"
-  </section>
-  <section ng-if = "Nid.found.length === 0">
-    No results found
-  </section>
-  <section ng-show = "Nid.displayErrorMessage">
-    {{Nid.errorMessage}}
-  </section>
-</header>
+<section class = "search-results-display-section" ng-show = "Nid.displaySuccessMessage" ng-if = "Nid.found.length > 0">
 
-<section class="search-results-section" ng-repeat = "recipeItem in Nid.found">
-  <section class="recipe-item-section">
-
-    <section class="recipe-description-section col-lg-4" >
-      {{recipeItem.recipe.label}}
-    </section>
-
-    <section class = "recipe-image-section col-lg-3">
-      <img class = "recipe-image" ng-src="{{recipeItem.recipe.image}}" alt="">
-    </section>
-
-    <section class="action-buttons-section col-lg-5">
-      <button ng-click = "Nid.showRecipe($index)" title = "View recipe" class = "view-recipe-button default-raised-button" type="button" name="button">VIEW RECIPE</button>
-      <button ng-click = "Nid.addingItem($index)" class="default-raised-button add-recipe-button" title = "Add to favorites" type="button" name="button">ADD TO FAVOURITES</button>
-      <!-- <button class="default-raised-button" title = "Remove from search list" type="button" name="button">REMOVE</button> -->
-    </section>
-
-  </section>
-</section>
-
-<section ng-show  = "Nid.recipeValue" class = "recipe-details-section">
-  <header>
-    <h1 class="col-lg-10">{{Nid.recipeDisplay.recipe.label}}</h1>
-    <section col-lg-2>
-      <button class = "close-recipe-button " ng-click = "Nid.hideRecipe()" type="button" name="button">CLOSE</button>
+  <header class = "search-results-header">
+    <section>
+      Showing recipes for "{{Nid.successMessage}}"
     </section>
   </header>
-  <br><br>
 
-  <section class="recipe-minor-details">
+  <section class="search-results-box-section">
+    <section class="search-results-section" ng-repeat = "recipeItem in Nid.found">
+      <section class="recipe-item-section">
 
+        <section class="recipe-description-section col-lg-4" >
+          {{recipeItem.recipe.label}}
+        </section>
+
+        <section class = "recipe-image-section col-lg-3">
+          <img class = "recipe-image" ng-src="{{recipeItem.recipe.image}}" alt="">
+        </section>
+
+        <section class="action-buttons-section col-lg-5">
+          <button ng-click = "Nid.showRecipe($index)" title = "View recipe" class = "view-recipe-button default-raised-button" type="button" name="button">VIEW RECIPE</button>
+          <button ng-click = "Nid.addingItem($index)" class="default-raised-button add-recipe-button" title = "Add to favorites" type="button" name="button">ADD TO FAVOURITES</button>
+          <!-- <button class="default-raised-button" title = "Remove from search list" type="button" name="button">REMOVE</button> -->
+        </section>
+
+      </section>
+    </section>
   </section>
 
-  <section class = "col-lg-6 recipe-main-details" >
-    <section class="recipe-ingredients">
-      <h1>Ingredients</h1>
-      <ul>
-        <li ng-repeat = "ingredient in Nid.recipeDisplay.recipe.ingredients">{{ingredient.text}}</li>
-      </ul>
+  <section ng-show  = "Nid.recipeValue" class = "recipe-details-section">
+    <header>
+      <h1 class="col-lg-10">{{Nid.recipeDisplay.recipe.label}}</h1>
+      <section col-lg-2>
+        <button class = "close-recipe-button " ng-click = "Nid.hideRecipe()" type="button" name="button">CLOSE</button>
+      </section>
+    </header>
+    <br><br>
+
+    <section class="recipe-minor-details">
+
     </section>
 
-    <section class="recipe-steps">
-      <h1>Steps for making : </h1>
-      <ol>
-        <li ng-repeat = "step in Nid.recipeDisplay.recipe.ingredientLines">{{step}}</li>
-      </ol>
+    <section class = "col-lg-6 recipe-main-details" >
+      <section class="recipe-ingredients">
+        <h1>Ingredients</h1>
+        <ul>
+          <li ng-repeat = "ingredient in Nid.recipeDisplay.recipe.ingredients">{{ingredient.text}}</li>
+        </ul>
+      </section>
+
+      <section class="recipe-steps">
+        <h1>Steps for making : </h1>
+        <ol>
+          <li ng-repeat = "step in Nid.recipeDisplay.recipe.ingredientLines">{{step}}</li>
+        </ol>
+      </section>
     </section>
+
+    <section class="recipe-main-image col-lg-6">
+      <img ng-src="{{Nid.recipeDisplay.recipe.image}}" alt="">
+    </section>
+
   </section>
 
-  <section class="recipe-main-image col-lg-6">
-    <img ng-src="{{Nid.recipeDisplay.recipe.image}}" alt="">
-  </section>
 
 </section>
