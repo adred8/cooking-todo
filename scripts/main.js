@@ -82,13 +82,13 @@ $(document).ready(function(){
       userCtrl.displayList = 0;
     }
 
-    userCtrl.recipeValue = 0;
+    userCtrl.recipeShow = 0;
     userCtrl.showRecipe = function(index){
-      userCtrl.recipeValue = 1;
+      userCtrl.recipeShow = 1;
       userCtrl.recipeDisplay = userCtrl.favRecipeList[index];
     }
     userCtrl.hideRecipe = function(){
-      userCtrl.recipeValue = 0;
+      userCtrl.recipeShow = 0;
     }
     userCtrl.favRecipeList = MenuSearchService.favRecipeList;
     console.log("length", userCtrl.favRecipeList.length);
@@ -101,32 +101,33 @@ $(document).ready(function(){
   NarrowItDownController.$inject = ["MenuSearchService"];
   function NarrowItDownController (MenuSearchService, $q){
     var Nid = this;
-    Nid.searchTerm = "";
-    Nid.searchMessage = "";
-    Nid.successMessage = "";
-    Nid.displaySuccessMessage = 0;
-    Nid.displayErrorMessage = 0;
-    Nid.recipeValue = 0;
-    Nid.emptyBox = 0;
+
+    // Nid.disableScroll = 1;
+    Nid.scrollClass = "ableScroll";
+    Nid.recipeShow = 0;
     Nid.showRecipe = function(index){
-      Nid.recipeValue = 1;
+      Nid.recipeShow = 1;
+      Nid.scrollClass = "disableScroll";
+      console.log("Nid.scrollClass", Nid.scrollClass);
       Nid.recipeDisplay = Nid.found[index];
     }
     Nid.hideRecipe = function(){
-      Nid.recipeValue = 0;
+      Nid.recipeShow = 0;
+      // Nid.disableScroll = 0;
+      Nid.scrollClass = "ableScroll";
+      console.log("Nid.scrollClass", Nid.scrollClass);
     }
+
+    Nid.searchTerm = "";
+    Nid.searchMessage = "";
+    Nid.displaySuccessMessage = 0;
+    Nid.successMessage = "";
     Nid.searchRecipes = function(){
       if (Nid.searchTerm === ""){
-        Nid.emptyBox = 1;
         Nid.displaySuccessMessage = 1;
-        Nid.displayErrorMessage = 1;
-        Nid.searchMessage = "";
-        Nid.errorMessage = "Please type something in search box...";
-        Nid.found = [];
+        Nid.searchMessage = "Please type something in search box...";
       }
       else{
-        Nid.displayErrorMessage = 0;
-        Nid.emptyBox = 0;
         Nid.searchMessage = "Searching..."
         var getMyMenuItems = MenuSearchService.getMatchedMenuItems(Nid.searchTerm);
         getMyMenuItems.then(function(response){
@@ -135,13 +136,16 @@ $(document).ready(function(){
           console.log("Nid.found = ",  Nid.found);
           console.log("Nid.response = ", Nid.response);
           // Nid.message = "Done !";
-          Nid.searchMessage = "";
-          Nid.displayErrorMessage = 0;
-          Nid.emptyBox = 1;
+          if (Nid.found.length != 0){
+            Nid.searchMessage = "";
+          }
+          else{
+            Nid.searchMessage = "Nothing found";
+          }
+
           Nid.displaySuccessMessage = 1;
           Nid.successMessage = Nid.searchTerm;
           Nid.searchTerm = "";
-          // Nid.message = Nid.searchTerm;
         });
         getMyMenuItems.catch(function(error){
           Nid.response = error;

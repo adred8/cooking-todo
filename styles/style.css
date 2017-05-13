@@ -1,5 +1,5 @@
 *{
-  /*outline: 1px solid green;*/
+  outline: 1px solid green;
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
@@ -31,7 +31,7 @@ button{
 }
 
 .default-raised-button{
-  min-width: 80px;
+  /*min-width: 80px;*/
   height: 36px;
   margin: 0px 8px;
   padding: 0 8px;
@@ -80,6 +80,12 @@ body{
   background-color: #ffffff;
 }
 
+.disableScroll{
+  overflow: hidden;
+}
+.ableScroll{
+  overflow: auto;
+}
 /*****************************************************************************/
 /*header*/
 /*****************************************************************************/
@@ -129,6 +135,7 @@ header{
 }
 .logout-button{
   font-weight: 500;
+  min-width: 80px;
   float: right;
   background-color:#00bbd3;
 }
@@ -141,14 +148,17 @@ article{
   min-height: 200px;
 }
 .search-section{
-  padding: 5% 20%;
-  height: 200px;
+  padding: 0 18%;
+  padding-top: 5%;
+  height: 190px;
 }
 .search-input{
   width: 500px;
   height: 48px;
   border: none;
   padding: 8px;
+  font-size: 16px;
+  font-weight: 500;
   /*border: 2px solid ;*/
   border-radius: 2px;
   box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.35);
@@ -164,7 +174,7 @@ article{
   box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.35);
 }
 .main-view-section{
-  padding: 0px 10%;
+  padding: 0px 13%;
 }
 .search-results-display-section{
   /*padding: 0px 10%;*/
@@ -174,7 +184,8 @@ article{
   padding: 8px;
 }
 .search-results-header{
-  padding : 16px 16px;
+  padding : 0px 16px;
+  padding-bottom: 64px;
   /*border: 1px solid rgba(0, 0, 0, 0.35);*/
   /*box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.35);*/
   font-size: 24px;
@@ -196,6 +207,31 @@ article{
   font-size: 16px;
   font-weight: 500;
 }
+.sub-recipe-header{
+  padding: 0;
+  /*position: fixed;
+  top: 0px;*/
+  /*background-color: lightyellow;*/
+}
+.sub-recipe-title{
+  font-size: 20px;
+  font-weight: 500;
+  padding: 8px;
+  padding-top: 16px;
+}
+.sub-recipe-making{
+  position: relative;
+  top: -20px;
+  padding: 16px;
+}
+.recipe-main-details h1{
+  font-size: 16px;
+  text-decoration: underline;
+  font-weight: 400;
+  /*padding-bottom: 8px;
+  padding-top: 8px;*/
+  padding: 8px 0;
+}
 .search-results-section{
   padding: 0px 16px;
   font-size: 16px;
@@ -204,6 +240,8 @@ article{
 }
 .action-buttons-section button{
   background-color: #62eeff;
+  font-weight: 400;
+  font-size: 14px;
 }
 .recipe-item-section{
   /*margin: 8px 0px;*/
@@ -223,7 +261,7 @@ article{
 
 .recipe-details-section{
   width: 700px;
-  height: 500px;
+  height: 510px;
   background-color: white;
   overflow: auto;
 
@@ -240,8 +278,17 @@ article{
   height: 150px;
   width: 150px;
 }
+.recipe-main-image{
+  padding: 8px;
+}
 .close-recipe-button{
   float: right;
+  position: relative;
+  top: -70px;
+  right: -40px;
+  background-color: #008ba2;
+  background-color: white;
+  width: 48px;
 }
 .stop-scroll{
   overflow: hidden;

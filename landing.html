@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
-  <body>
+  <body  ng-controller = "NarrowItDownController as Nid">
     <header class = "landing-header">
       <section class="left-nav-section col-lg-6">
         <a href="#!/" class = "home-link">Cook More !</a>
@@ -31,13 +31,12 @@
 
     </header>
 
-    <article>
-
+    <article ng-class = "Nid.scrollClass">
       <section ng-view class = "main-view-section">
 
       </section>
       <!-- <ng-view ></ng-view> -->
-
+      <!-- {{Nid.scrollClass}} -->
 
     </article>
 

@@ -11,17 +11,6 @@
     {{Nid.searchMessage}}
   </section>
 
-  <section class="search-result-status" ng-if = "Nid.found.length === 0">
-
-
-    <section ng-show = "Nid.displayErrorMessage" ng-if = "Nid.emptyBox">
-      {{Nid.errorMessage}}
-    </section>
-    <section ng-show = "!Nid.displayErrorMessage" ng-if = "Nid.emptyBox">
-      No results found
-    </section>
-  </section>
-
 </section>
 
 <section class = "filters-section">
@@ -42,16 +31,9 @@
 
         <section class = "col-lg-8">
           <section class="recipe-description-section col-lg-12" >
+
             <section class = "recipe-title">
               {{recipeItem.recipe.label}}
-            </section>
-            <section class="recipe-details">
-              <!-- healthlabels, calories -->
-              <!-- <section class="health-labels-section">
-                <section ng-repeat = "label in recipeItem.recipe.healthLabels">
-                  {{label}}
-                </section>
-              </section> -->
             </section>
 
           </section>
@@ -73,11 +55,14 @@
     </section>
   </section>
 
-  <section ng-show  = "Nid.recipeValue" class = "recipe-details-section">
-    <header>
-      <h1 class="col-lg-10">{{Nid.recipeDisplay.recipe.label}}</h1>
-      <section col-lg-2>
-        <button class = "close-recipe-button " ng-click = "Nid.hideRecipe()" type="button" name="button">CLOSE</button>
+  <section ng-show  = "Nid.recipeShow" class = "recipe-details-section">
+    <header class = "sub-recipe-header">
+      <section class="sub-recipe-title col-lg-12">{{Nid.recipeDisplay.recipe.label}}</section>
+      <section>
+        <!-- <button class = "close-recipe-button " ng-click = "Nid.hideRecipe()" type="button" name="button">CLOSE</button> -->
+        <button class = "close-recipe-button default-flat-button" ng-click = "Nid.hideRecipe()" type="button" name="button">
+          <img src="images/close-36.png" alt="">
+        </button>
       </section>
     </header>
     <br><br>
@@ -86,24 +71,26 @@
 
     </section>
 
-    <section class = "col-lg-6 recipe-main-details" >
-      <section class="recipe-ingredients">
-        <h1>Ingredients</h1>
-        <ul>
-          <li ng-repeat = "ingredient in Nid.recipeDisplay.recipe.ingredients">{{ingredient.text}}</li>
-        </ul>
+    <section class="col-lg-12 sub-recipe-making">
+      <section class = "col-lg-6 recipe-main-details" >
+        <!-- <section class="recipe-ingredients">
+          <h1>Ingredients</h1>
+          <ul>
+            <li ng-repeat = "ingredient in Nid.recipeDisplay.recipe.ingredients">{{ingredient.text}}</li>
+          </ul>
+        </section> -->
+
+        <section class="recipe-steps">
+          <h1>Steps for making : </h1>
+          <ol>
+            <li ng-repeat = "step in Nid.recipeDisplay.recipe.ingredientLines">{{step}}</li>
+          </ol>
+        </section>
       </section>
 
-      <section class="recipe-steps">
-        <h1>Steps for making : </h1>
-        <ol>
-          <li ng-repeat = "step in Nid.recipeDisplay.recipe.ingredientLines">{{step}}</li>
-        </ol>
+      <section class="recipe-main-image col-lg-6">
+        <img ng-src="{{Nid.recipeDisplay.recipe.image}}" alt="">
       </section>
-    </section>
-
-    <section class="recipe-main-image col-lg-6">
-      <img ng-src="{{Nid.recipeDisplay.recipe.image}}" alt="">
     </section>
 
   </section>
