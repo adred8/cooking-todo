@@ -210,13 +210,14 @@ article{
 }
 .favorites-button, .shopping-button{
   background-color: white;
-  /*border: 2px solid #00bcd4;*/
+  border: 2px solid #62efff;
   /*border-bottom:  2px solid #00bcd4;*/
 }
 .favorites-button:hover, .shopping-button:hover{
   /*border-bottom: 2px solid #00bcd4;*/
-  border-bottom:  2px solid #008ba3;
-  /*border: 2px solid #008ba3;*/
+  /*background-color: #008ba3;*/
+  /*border-bottom:  2px solid #008ba3;*/
+  border: 2px solid #008ba3;
 }
 .recipe-description-section, .fav-recipe-description-section{
   height: 100px;
@@ -288,9 +289,9 @@ article{
   border-bottom: 2px solid lightgray;
 }
 .app-description{
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 500;
-  padding: 16px 16px;
+  padding: 17% 16px;
 }
 
 .recipe-details-section{
@@ -337,8 +338,10 @@ article{
   overflow: hidden;
 }
 .activeList{
-  border-bottom: 2px solid #008ba3;
-  /*border: 2px solid #008ba3;*/
+  background-color: #008ba3;
+  /*border: none;*/
+  /*border-bottom: 2px solid #008ba3;*/
+  border: 2px solid #008ba3;
 }
 
 .display-shop-item{
@@ -358,6 +361,7 @@ article{
 .adding-shop-item input{
   height: 56px;
   padding : 0px 8px;
+  font-size: 16px;
   border: none;
   border-bottom: 2px solid #62eeff;
   margin-right: 32px;
@@ -371,28 +375,29 @@ article{
 .add-shop-item-button{
   /*color: #00bbd3;*/
   /*color: #62eeff;*/
-  background-color:#62eeff;
+  background-color:#00bcd4;
   width: 80px;
 }
 .shop-item-action button{
   position: relative;
   /*background-color: #62efff;*/
-  background-color: #008ba3;
+  /*background-color: #008ba3;*/
+  background-color: none;
   /*background-color: white;*/
-  top: -6px;
-  color: #62efff;
+  top: -8px;
+  /*color: #62efff;*/
   /*padding: 8px;*/
 }
 .checkbox-input{
   width: 20px;
   height: 20px;
-  display: inline;
+  /*display: inline;*/
 }
 .main-shop-item-details{
   padding-left: 8px;
   position: relative;
-  top: -4px;
-  display: inline;
+  top: 0px;
+  /*display: inline;*/
 }
 /******************************************************************************/
 /******************************************************************************/

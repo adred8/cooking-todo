@@ -71,7 +71,7 @@
 <section ng-if = "userCtrl.displayList === 0" class = "shop-list-section">
   <!-- <br><br> -->
   <header class = "adding-shop-item">
-    <input ng-model = "userCtrl.itemName" type="text" name="" value="" placeholder = "Name">
+    <input ng-model = "userCtrl.itemName" type="text" name="" value="" placeholder = "Item name">
     <input ng-model = "userCtrl.itemQuantity" type="text" name="" value="" placeholder = "Quantity">
     <input ng-model = "userCtrl.itemUnits" type="text" name="" value="" placeholder = "Units">
     <button class = "add-shop-item-button default-raised-button" ng-click = "userCtrl.addShopItem()" type="button" name="button">ADD</button>
@@ -99,7 +99,7 @@
             </section>
             <section class="shop-item-action col-lg-2">
               <!-- <button ng-click = "userCtrl.editShopItem($index)" class = "edit-shop-item" type="button" name="button">EDIT</button> -->
-              <button class="default-raised-button" ng-click = "userCtrl.removeShopItem($index)" type="button" name="button">
+              <button class="default-flat-button" ng-click = "userCtrl.removeShopItem($index)" type="button" name="button">
                 <img src="images/close-24.png" alt="">
               </button>
             </section>
