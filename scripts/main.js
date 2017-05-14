@@ -74,12 +74,18 @@ $(document).ready(function(){
       userCtrl.itemUnits = "";
     }
 
+    userCtrl.favClass = "activeList";
+    userCtrl.shopClass = "";
     userCtrl.displayList = 1;
     userCtrl.favListDisplay = function(){
       userCtrl.displayList = 1;
+      userCtrl.favClass = "activeList";
+      userCtrl.shopClass = "";
     }
     userCtrl.shopListDisplay = function(){
       userCtrl.displayList = 0;
+      userCtrl.favClass = "";
+      userCtrl.shopClass = "activeList";
     }
 
     userCtrl.recipeShow = 0;

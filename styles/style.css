@@ -94,6 +94,9 @@ header{
   height: 56px;
 }
 .landing-header{
+  /*position: fixed;
+  top: 0;
+  width: 100%;*/
   background-color: #cddc39;
   box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.35);
 }
@@ -157,7 +160,7 @@ article{
   height: 48px;
   border: none;
   padding: 8px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   /*border: 2px solid ;*/
   border-radius: 2px;
@@ -196,15 +199,28 @@ article{
 .search-status-section{
   padding: 8px;
 }
-.search-results-box-section{
+.search-results-box-section, .fav-list-box-section{
   box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.25);
 }
-.recipe-description-section{
+.user-section-header{
+  padding: 8px;
+}
+.favorites-button, .shopping-button{
+  background-color: white;
+  /*border: 2px solid #00bcd4;*/
+  /*border-bottom:  2px solid #00bcd4;*/
+}
+.favorites-button:hover, .shopping-button:hover{
+  /*border-bottom: 2px solid #00bcd4;*/
+  border-bottom:  2px solid #008ba3;
+  /*border: 2px solid #008ba3;*/
+}
+.recipe-description-section, .fav-recipe-description-section{
   height: 100px;
 }
-.recipe-title{
+.recipe-title, .fav-recipe-title{
   padding: 20px 8px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
 }
 .sub-recipe-header{
@@ -238,21 +254,36 @@ article{
   border-bottom: 2px solid lightgray;
   border-radius: 2px;
 }
+.action-buttons-section{
+  padding: 8px;
+}
 .action-buttons-section button{
-  background-color: #62eeff;
-  font-weight: 400;
+  /*background-color: #62eeff;*/
+  background-color: #008ba3;
+  /*background-color: white;*/
+  /*color: #62eeff;*/
+  /*color: #008ba3;*/
+  font-weight: 500;
   font-size: 14px;
+}
+.action-buttons-section button:hover{
+  /*color: #62eeff;*/
+  /*background-color: #008ba3;*/
 }
 .recipe-item-section{
   /*margin: 8px 0px;*/
   min-height: 200px;
   padding: 24px 0px;
 }
-.fav-recipe-item{
-  min-height: 150px;
+.fav-recipe-item-section{
+  min-height: 200px;
   padding: 24px 0px;
 }
 
+.fav-recipe-item-display{
+  padding: 0 16px;
+  border-bottom: 2px solid lightgray;
+}
 .app-description{
   font-size: 20px;
   font-weight: 500;
@@ -290,9 +321,25 @@ article{
   background-color: white;
   width: 48px;
 }
+.fav-close-recipe-button{
+  float: right;
+  position: relative;
+  top: -50px;
+  right: -50px;
+  background-color: #008ba2;
+  background-color: white;
+  width: 48px;
+}
 .stop-scroll{
   overflow: hidden;
 }
+.activeList{
+  border-bottom: 2px solid #008ba3;
+  /*border: 2px solid #008ba3;*/
+}
+/*.inactiveList{
+  border : none;
+}*/
 /******************************************************************************/
 /******************************************************************************/
 /*MEDIUM DISPLAY*/
