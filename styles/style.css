@@ -169,7 +169,7 @@ article{
 .search-button{
   position: relative;
   height: 48px;
-  top: 13px;
+  top: 12px;
   padding-top: 5px;
   padding-left: 10px;
   width: 80px;
@@ -263,7 +263,7 @@ article{
 }
 .action-buttons-section button{
   /*background-color: #62eeff;*/
-  background-color: #008ba3;
+  background-color: #00bcd4;
   /*background-color: white;*/
   /*color: #62eeff;*/
   /*color: #008ba3;*/
