@@ -42,28 +42,31 @@ $(document).ready(function(){
     userCtrl.itemName = "";
     userCtrl.itemQuantity = "";
     userCtrl.itemUnits = "";
-    userCtrl.editName = "";
-    userCtrl.editQuantity = "";
-    userCtrl.editItems = "";
-    userCtrl.showShopItem = 1;
-    userCtrl.editedItem = [];
-    userCtrl.edited = function(index){
-      userCtrl.showShopItem = 1;
+    // userCtrl.editName = "";
+    // userCtrl.editQuantity = "";
+    // userCtrl.editItems = "";
+    // userCtrl.showShopItem = 1;
+    // userCtrl.editedItem = [];
+    // userCtrl.edited = function(index){
+    //   userCtrl.showShopItem = 1;
+    //
+    //   userCtrl.editedItem[0].itemName = userCtrl.editName;
+    //   userCtrl.editedItem[0].itemQuantity = userCtrl.editQuantity;
+    //   userCtrl.editedItem[0].itemUnits = userCtrl.editUnits;
+    // }
+    // userCtrl.editShopItem = function(index){
+    //   console.log("userCtrl.shopList[idx]", userCtrl.shopList[index]);
+    //   userCtrl.showShopItem = 2;
+    //   userCtrl.editedItem.push(userCtrl.shopList[index]);
+    //   console.log("userCtrl.editedItem", userCtrl.editedItem);
+    //   userCtrl.editName = userCtrl.editedItem[0].itemName;
+    //   userCtrl.editQuantity = userCtrl.editedItem[0].itemQuantity;
+    //   userCtrl.editUnits = userCtrl.editedItem[0].itemUnits;
+    // }
 
-      userCtrl.editedItem[0].itemName = userCtrl.editName;
-      userCtrl.editedItem[0].itemQuantity = userCtrl.editQuantity;
-      userCtrl.editedItem[0].itemUnits = userCtrl.editUnits;
-    }
-    userCtrl.editShopItem = function(index){
-      console.log("userCtrl.shopList[idx]", userCtrl.shopList[index]);
-      userCtrl.showShopItem = 2;
-      userCtrl.editedItem.push(userCtrl.shopList[index]);
-      console.log("userCtrl.editedItem", userCtrl.editedItem);
-      userCtrl.editName = userCtrl.editedItem[0].itemName;
-      userCtrl.editQuantity = userCtrl.editedItem[0].itemQuantity;
-      userCtrl.editUnits = userCtrl.editedItem[0].itemUnits;
-    }
     userCtrl.shopList = ShoppingService.shopList;
+    console.log("userCtrl.shopList = ", userCtrl.shopList);
+    console.log("userCtrl.shopList.length = ", userCtrl.shopList.length);
     userCtrl.removeShopItem = function(index){
       userCtrl.shopList = ShoppingService.removeShopItem(index);
     }

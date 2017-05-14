@@ -199,8 +199,11 @@ article{
 .search-status-section{
   padding: 8px;
 }
-.search-results-box-section, .fav-list-box-section{
+.search-results-box-section, .fav-list-box-section, .shop-list-box-section{
   box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.25);
+}
+.shop-list-box-section{
+  min-height: 120px;
 }
 .user-section-header{
   padding: 8px;
@@ -337,9 +340,40 @@ article{
   border-bottom: 2px solid #008ba3;
   /*border: 2px solid #008ba3;*/
 }
-/*.inactiveList{
-  border : none;
-}*/
+
+.display-shop-item{
+  padding: 16px 32px;
+  min-height: 120px;
+  overflow: auto;
+}
+
+.display-shop-item li{
+  margin-bottom: 16px;
+  height: 30px;
+}
+.empty-shopList-message{
+  padding: 0 16px;
+}
+.shop-item-action button{
+  position: relative;
+  /*background-color: #62efff;*/
+  background-color: #008ba3;
+  /*background-color: white;*/
+  top: -6px;
+  color: #62efff;
+  /*padding: 8px;*/
+}
+.checkbox-input{
+  width: 20px;
+  height: 20px;
+  display: inline;
+}
+.main-shop-item-details{
+  padding-left: 8px;
+  position: relative;
+  top: -4px;
+  display: inline;
+}
 /******************************************************************************/
 /******************************************************************************/
 /*MEDIUM DISPLAY*/
