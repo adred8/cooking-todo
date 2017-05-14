@@ -38,7 +38,7 @@ $(document).ready(function(){
   userController.$inject = ["MenuSearchService", "ShoppingService"];
   function userController (MenuSearchService, ShoppingService){
     var userCtrl = this;
-
+    userCtrl.message = "";
     userCtrl.itemName = "";
     userCtrl.itemQuantity = "";
     userCtrl.itemUnits = "";
@@ -70,11 +70,21 @@ $(document).ready(function(){
     userCtrl.removeShopItem = function(index){
       userCtrl.shopList = ShoppingService.removeShopItem(index);
     }
+
+    userCtrl.messageDisplay = 0;
     userCtrl.addShopItem = function(){
-      userCtrl.shopList = ShoppingService.addShopItem(userCtrl.itemName, userCtrl.itemQuantity, userCtrl.itemUnits);
-      userCtrl.itemName = "";
-      userCtrl.itemQuantity = "";
-      userCtrl.itemUnits = "";
+      userCtrl.message = "";
+      if (userCtrl.itemName === "" || userCtrl.itemQuantity === "" || userCtrl.itemUnits === ""){
+        userCtrl.messageDisplay = 1;
+        userCtrl.message = "Please fill all the input fields";
+      }else{
+        userCtrl.messageDisplay = 0;
+        userCtrl.shopList = ShoppingService.addShopItem(userCtrl.itemName, userCtrl.itemQuantity, userCtrl.itemUnits);
+        userCtrl.itemName = "";
+        userCtrl.itemQuantity = "";
+        userCtrl.itemUnits = "";
+      }
+
     }
 
     userCtrl.favClass = "activeList";

@@ -342,7 +342,7 @@ article{
 }
 
 .display-shop-item{
-  padding: 16px 32px;
+  padding: 24px 32px;
   min-height: 120px;
   overflow: auto;
 }
@@ -350,9 +350,29 @@ article{
 .display-shop-item li{
   margin-bottom: 16px;
   height: 30px;
+  /*list-style: none;*/
 }
 .empty-shopList-message{
   padding: 0 16px;
+}
+.adding-shop-item input{
+  height: 56px;
+  padding : 0px 8px;
+  border: none;
+  border-bottom: 2px solid #62eeff;
+  margin-right: 32px;
+
+}
+.adding-shop-item input:focus{
+  outline: none;
+  border-bottom: 2px solid #008ba2;
+  /*border: none;*/
+}
+.add-shop-item-button{
+  /*color: #00bbd3;*/
+  /*color: #62eeff;*/
+  background-color:#62eeff;
+  width: 80px;
 }
 .shop-item-action button{
   position: relative;

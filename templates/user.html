@@ -70,16 +70,19 @@
 
 <section ng-if = "userCtrl.displayList === 0" class = "shop-list-section">
   <!-- <br><br> -->
-  <header class = "addding-shop-item">
-    <input ng-model = "userCtrl.itemName" type="text" name="" value="" placeholder = "add item name">
-    <input ng-model = "userCtrl.itemQuantity" type="text" name="" value="" placeholder = "add item quantity">
-    <input ng-model = "userCtrl.itemUnits" type="text" name="" value="" placeholder = "add item units">
-    <button ng-click = "userCtrl.addShopItem()" type="button" name="button">ADD</button>
+  <header class = "adding-shop-item">
+    <input ng-model = "userCtrl.itemName" type="text" name="" value="" placeholder = "Name">
+    <input ng-model = "userCtrl.itemQuantity" type="text" name="" value="" placeholder = "Quantity">
+    <input ng-model = "userCtrl.itemUnits" type="text" name="" value="" placeholder = "Units">
+    <button class = "add-shop-item-button default-raised-button" ng-click = "userCtrl.addShopItem()" type="button" name="button">ADD</button>
+    <br><br>
+    {{userCtrl.message}}
   </header>
-  <br>
+  <br><br><br><br>
 
   <section class="shop-list-box-section" ng-show = "userCtrl.shopList.length > 0">
     <section class= "display-shop-item">
+      <!-- <br> -->
       <ul>
         <li ng-repeat = "item in userCtrl.shopList" class="col-lg-12">
           <!-- <section ng-show = "userCtrl.showShopItem" class="col-lg-12"> -->
@@ -88,7 +91,7 @@
               <input class = "checkbox-input" type="checkbox" name="" value="Car">
             </section> -->
             <section class="shop-item-details col-lg-3">
-              <input class = "checkbox-input" type="checkbox" name="" value="Car">
+              <!-- <input class = "checkbox-input" type="checkbox" name="" value="Car"> -->
 
               <section class="main-shop-item-details">
                 {{item.quantity}} {{item.units}} of {{item.name}}
