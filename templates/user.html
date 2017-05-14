@@ -39,9 +39,9 @@
 </section>
 
 <section ng-show  = "userCtrl.recipeShow" class = "recipe-details-section">
-  <header>
-    <section class="col-lg-12">{{userCtrl.recipeDisplay.recipe.label}}</section>
-    <button class = "fav-close-recipe-button default-flat-button" ng-click = "userCtrl.hideRecipe()" type="button" name="button">
+  <header class="sub-recipe-header">
+    <section class = "sub-recipe-title" class="col-lg-12">{{userCtrl.recipeDisplay.recipe.label}}</section>
+    <button class = "close-recipe-button default-flat-button" ng-click = "userCtrl.hideRecipe()" type="button" name="button">
       <img src="images/close-36.png" alt="">
     </button>
   </header>
@@ -51,24 +51,26 @@
 
   </section>
 
-  <section class = "col-lg-6 recipe-main-details" >
-    <!-- <section class="recipe-ingredients">
-      <h1>Ingredients</h1>
-      <ul>
-        <li ng-repeat = "ingredient in userCtrl.recipeDisplay.recipe.ingredients">{{ingredient.text}}</li>
-      </ul>
-    </section> -->
+  <section class="sub-recipe-making col-lg-12">
+    <section class = "col-lg-6 recipe-main-details" >
+      <!-- <section class="recipe-ingredients">
+        <h1>Ingredients</h1>
+        <ul>
+          <li ng-repeat = "ingredient in userCtrl.recipeDisplay.recipe.ingredients">{{ingredient.text}}</li>
+        </ul>
+      </section> -->
 
-    <section class="recipe-steps">
-      <h1>Steps for making : </h1>
-      <ol>
-        <li ng-repeat = "step in userCtrl.recipeDisplay.recipe.ingredientLines">{{step}}</li>
-      </ol>
+      <section class="recipe-steps">
+        <h1>Steps for making : </h1>
+        <ol>
+          <li ng-repeat = "step in userCtrl.recipeDisplay.recipe.ingredientLines">{{step}}</li>
+        </ol>
+      </section>
     </section>
-  </section>
 
-  <section class="recipe-main-image col-lg-6">
-    <img ng-src="{{userCtrl.recipeDisplay.recipe.image}}" alt="">
+    <section class="recipe-main-image col-lg-6">
+      <img ng-src="{{userCtrl.recipeDisplay.recipe.image}}" alt="">
+    </section>
   </section>
 
 </section>

@@ -229,7 +229,7 @@ article{
   top: 0px;*/
   /*background-color: lightyellow;*/
 }
-.sub-recipe-title{
+.sub-recipe-title, .modal-recipe-title{
   font-size: 20px;
   font-weight: 500;
   padding: 8px;
