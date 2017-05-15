@@ -1,4 +1,4 @@
 # cooking-todo
 
-username : admin
+username : admin | 
 password : admin
